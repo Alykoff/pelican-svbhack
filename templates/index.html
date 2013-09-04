@@ -1,20 +1,25 @@
 {% extends "base.html" %}
 {% block content %}
-{% for article in articles_page.object_list %}
-<article>
-  <div id="article_title">
-    <h3><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h3>
-  </div>
-  <div id="article_text">
-    {{ article.summary }}
-  </div>
-</article>
-{% if not loop.last %}
-<hr />
-{% endif %}
-{% endfor %}
+<div class="articles_wrapper">
+	<ul class="articles">
+		{% for article in articles_page.object_list %}
+			<li class="article">
+			  <div class="article_title">
+		    	<a href="{{ SITEURL }}/{{ article.url }}">
+				    {% if article.image %}
+				    	<img class="article_title_image" src="{{article.image}}" />
+				    {% endif %}
+				    <div class="article_description">
+				    		{{ article.title }}
+				    </div>
+		    	</a>
+			  </div>
+			</li>
+		{% endfor %}
+	</ul>
+</div>
 {% endblock %}
 
 {% block footer %}
-{% include "modules/pagination.html" %}
+{#{% include "modules/pagination.html" %}#}
 {% endblock %}
