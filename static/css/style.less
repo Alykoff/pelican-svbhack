@@ -3,6 +3,7 @@
 @white:  #ffffff;
 @light-grey:  #eeeeee;
 @med-grey:  #999999;
+@menu-font-color: rgb(246, 229, 229);
 @dark-grey:  #4d4d4d;
 @blue:  #0e94ec;
 @black_95: rgba(0,0,0,.95);
@@ -61,6 +62,7 @@ hr {
 /* left column with static position */
 .sidebar {
   overflow-y: auto;
+  background: url("../images/bg-diamond-pink.png") repeat scroll 0% 0% transparent;
 }
 
 .sidebar_user_meta {
@@ -136,6 +138,17 @@ hr {
     margin: 0 auto;
   }
 
+  .article_item {
+    max-width: 200px;
+    display: inline-block;
+    padding-bottom:  40px;
+
+    .article_title {
+      // background: 
+    }
+    
+  }
+
   .article {
     max-width: 200px;
     display: inline-block;
@@ -186,25 +199,26 @@ hr {
     }
   }
 
+  .button_accent {
+    display: inline-block;
+    padding: 10px;
+    text-transform: uppercase;
+    color: @accent;
+    font-size: 1.125em;
+    &:hover {
+      color: @white;
+      background-color: @accent;
+    }
+    &:active {
+      color: @white;
+      background-color: @accent;
+    }
+  }
+
   .main_footer {
     border-top: @light-grey 1px solid;
     border-bottom: @light-grey 1px solid;
-    padding: 40px;
-
-    .button_accent {
-      padding: 10px;
-      text-transform: uppercase;
-      color: @accent;
-      font-size: 1.125em;
-      &:hover {
-        color: @white;
-        background-color: @accent;
-      }
-      &:active {
-        color: @white;
-        background-color: @accent;
-      }
-    }
+    padding: 20px 0;
   }
 
   .ending_message {
@@ -212,10 +226,26 @@ hr {
     color: @med-grey;
     font-size: 0.675em;
   }
+  .img {
+    max-width: 100%;      
+  }
 }
 
 /*media 768px*/
 @media screen and (min-width: 768px) {
+  .article_title {
+    padding: 20px 0 5px 20px;
+  }
+  .article_text .line-block, .article_meta {
+    padding-left: 15px;
+  }
+  .article_text {
+    text-align: justify;
+    padding-right: 10px;
+  }
+  .img {
+    display: block;
+  }
   .sidebar {
     width: 30%;
     height: 100%;
@@ -242,7 +272,7 @@ hr {
       border: 3px solid @light-grey;
       padding: 5px 15px 5px 15px;
       border: none;
-      color: @med-grey;
+      color: @menu-font-color;
       background: none;
       &:hover {
         background: rgba(0,0,0,.89);

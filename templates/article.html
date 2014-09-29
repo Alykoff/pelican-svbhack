@@ -3,14 +3,19 @@
 <meta name="keywords" content="{{ article.tags|join(', ')  }}">
 {% endblock %}
 
-{% block title %}{{ article.title }}{% endblock %}
+{% block title %}
+  {{ article.title }}
+{% endblock %}
 
 {% block header %}
-<p>Posted on {{ article.locale_date }}</p>
+  <p>Posted on {{ article.locale_date }}</p>
 {% endblock %}
 
 {% block content %}
 <article>
+  <!-- <p class="">
+  </p> -->
+  <a href="{{ SITEURL }}/" class="button_accent">&larr; Back to Index</a>
   <div class="article_title">
     <h3><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h3>
   </div>
@@ -28,11 +33,9 @@
     </p>
     {% endif %}
   </div>
-
-
 </article>
 {% endblock %}
 
 {% block footer %}
-<p><a href="{{ SITEURL }}/" class="button_accent">&larr; Back to Index</a></p>
+<a href="{{ SITEURL }}/" class="button_accent">&larr; Back to Index</a>
 {% endblock %}
