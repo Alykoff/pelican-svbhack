@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block head %}
 <meta name="keywords" content="{{ article.tags|join(', ')  }}">
+<!-- <script type="text/javascript" src="{{ SITEURL }}/theme/lib/highslide-4.1.13/highslide.js"></script> -->
 {% endblock %}
 
 {% block title %}
@@ -8,7 +9,11 @@
 {% endblock %}
 
 {% block header %}
-  <p>Posted on {{ article.locale_date }}</p>
+  <h2>
+    <a href="{{ SITEURL }}/{{ article.url }}">
+      {{ article.title }}
+    </a>
+  </h2>
 {% endblock %}
 
 {% block content %}
@@ -17,7 +22,7 @@
   </p> -->
   <a href="{{ SITEURL }}/" class="button_accent">&larr; Back to Index</a>
   <div class="article_title">
-    <h3><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h3>
+    <p>Posted on {{ article.locale_date }}</p>
   </div>
   <div class="article_text">
     {{ article.content }}

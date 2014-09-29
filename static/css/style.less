@@ -10,6 +10,7 @@
 @accent:  @black_95;
 @sans: 'PT Sans', sans-serif;
 @serif: 'PT Serif', serif;
+@sans-serif: sans-serif;
 @mono: 'PT Mono', monospace;
 @font_size: 1em;
 @max_image_width: 200px;
@@ -51,6 +52,7 @@ hr {
   height: 1px;
   border: none;
 }
+
 
 .article_description {
   font-size: 14px;
@@ -108,11 +110,11 @@ hr {
     padding: 40px;
     border-top: @light-grey 1px solid;
     border-bottom: @light-grey 1px solid;
-
+    font: @sans-serif;
     p {
-      font-weight: bold;
-      font-size: 0.625em;
-      text-transform: uppercase;
+      _font-weight: bold;
+      _font-size: 0.625em;
+      _text-transform: uppercase;
     }
   }
 
@@ -227,7 +229,7 @@ hr {
     font-size: 0.675em;
   }
   .img {
-    max-width: 100%;      
+    max-width: 100%;
   }
 }
 
@@ -244,7 +246,7 @@ hr {
     padding-right: 10px;
   }
   .img {
-    display: block;
+    display: inline-block;
   }
   .sidebar {
     width: 30%;
